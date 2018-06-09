@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .flex-grid {
@@ -10,17 +11,38 @@ body {
 .col {
   flex: 1;
 }
+ul{
+  list-style-type:none;
+}
+.Brands img:hover {
+outline: pink solid 4px;
+cursor: pointer;
+}
+
+.img-border {
+outline: pink solid 4px;
+cursor: pointer;
+}
 
 @media (max-width: 400px) {
   .flex-grid {
     display: block;
   }
 }
-/*for gutters */ 
+/*for gutters */
 .flex-grid-thirds {
   display: flex;
   justify-content: space-between;
 }
 .flex-grid-thirds .col {
   width: 32%;
+}
+
+.Brands
+{
+    margin-left:100px;
+    margin-right:100px;
+    margin-top:10%;
+    margin-bottom: 50px;
+
 }
