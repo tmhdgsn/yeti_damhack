@@ -4,6 +4,13 @@ import './App.css';
 import Brands from './Brands';
 
 class App extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      stage:0,
+      files:null
+    };
+  }
   render() {
     return (
       <div className="App">
@@ -15,7 +22,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <Brands />
+        {this.state.stage == 0 && <Brands />}
       </div>
     );
   }
