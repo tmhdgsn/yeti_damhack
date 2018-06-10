@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Brands from './Brands';
+import ConnectedBrands from './Brands';
 import Buttons from './Buttons';
 import FileUpload from './FileUpload';
 import 'typeface-roboto';
-
 
 class App extends Component {
   constructor (props) {
@@ -32,7 +30,7 @@ class App extends Component {
           </div>
         </div>
         {this.state.stage === 0 &&
-          <Brands />}
+          <ConnectedBrands />}
         {this.state.stage === 0 &&
           <Buttons click={this.updateStage} text="Next"></Buttons>}
 

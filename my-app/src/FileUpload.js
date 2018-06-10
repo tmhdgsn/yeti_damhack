@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Brands from './Brands';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import 'typeface-roboto';
