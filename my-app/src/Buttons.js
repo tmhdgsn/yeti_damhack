@@ -16,14 +16,13 @@ const styles = theme => ({
 });
 
 function ContainedButtons(props) {
-  const { classes } = props;
+  const { classes, click, text } = props;
   return (
     <div className='Buttons'>
 
-      <Button variant="contained" color="secondary" className={classes.button}
-      href="http://www.google.com" type="submit"
+      <Button variant="contained" color="secondary" className={classes.button} onClick={click}
       >
-        Next
+        {text}
       </Button>
 
     </div>
@@ -31,7 +30,7 @@ function ContainedButtons(props) {
 }
 
 ContainedButtons.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ContainedButtons);

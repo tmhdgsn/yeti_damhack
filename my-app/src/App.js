@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Brands from './Brands';
 import Buttons from './Buttons';
+import FileUpload from './FileUpload';
 import 'typeface-roboto';
 
 
@@ -13,7 +14,13 @@ class App extends Component {
       stage:0,
       files:null
     };
+    this.updateStage = this.updateStage.bind(this);
   }
+
+  updateStage() {
+    this.setState({stage: this.state.stage + 1});
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,8 +31,13 @@ class App extends Component {
           </div>
           </div>
         </div>
+        {this.state.stage === 0 &&
+          <Brands />}
+        {this.state.stage === 0 &&
+          <Buttons click={this.updateStage} text="Next"></Buttons>}
 
-        {this.state.stage == 0 && <Brands />}
+        {this.state.stage === 1 && < FileUpload />}
+
       </div>
     );
   }
