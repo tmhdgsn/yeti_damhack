@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './index.css';
-import hnm from '../images/hnmsmall.png'
+import zara from '../images/zara.jpg'
 import asos from '../images/asos.jpg'
 import adidas from '../images/adidassmall.png'
 
@@ -36,29 +36,22 @@ class Brands extends Component {
   render() {
     return (
       <div className="Brands">
-
-
             <div className="flex-grid">
               <div className="col">
-
                   <a onClick={this.onClickAdidas}>
                     <input type="hidden" name="brands" value="adidas" disabled=""/>
                     <img src={adidas} alt={"adidaslogo"} className={this.state.adidasSelected? 'img-border': ''}/>
                   </a>
-
               </div>
 
             <div className="col">
-
                 <a onClick={this.onClickHnM}>
                   <input type="hidden" name="brands" value="hnm" disabled=""/>
-                  <img src={hnm} alt={"hnmlogo"} className={this.state.hnmSelected? 'img-border': ''}/>
+                  <img src={zara} alt={"zaralogo"} className={this.state.hnmSelected? 'img-border': ''}/>
                 </a>
-
             </div>
 
             <div className="col">
-
                 <a onClick={this.onClickZara}>
                   <input type="hidden" name="brands" value="hnm" disabled=""/>
                 <img src={asos} alt={"asoslogo"} className={this.state.zaraSelected? 'img-border': ''}/>
