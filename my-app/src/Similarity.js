@@ -7,8 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import placeholder from '../images/imgplaceholder.jpg'
 import Buttons from './Buttons';
-import axios from 'axios';
-import cheerio from 'cheerio';
+import asosData  from '../../scraping/meta/asos/asos.json';
 
 const styles = theme => ({
   root: {
@@ -30,68 +29,52 @@ const styles = theme => ({
   },
 });
 
-class FileUpload extends Component {
+class Similarity extends Component {
   constructor (props) {
     super(props);
-    this.state = {img: null, selectedFile: null, data: null};
     this.uploadHandler = this.uploadHandler.bind(this);
     this.fileChangedHandler = this.fileChangedHandler.bind(this);
 
   }
   fileChangedHandler = (event) => {
     // Assuming only image
-    this.setState({selectedFile: event.target.files[0]})
-
     var file = this.refs.file.files[0];
     var reader = new FileReader();
     var url = reader.readAsDataURL(file);
 
      reader.onloadend = function (e) {
-        this.setState({img: [reader.result]})
-        console.log(reader.result);
-
+        this.setState({selectedFile: [reader.result]})
       }.bind(this);
-
+    console.log(url) // Would see a path?
+    // TODO: concat files  }
   }
 
   uploadHandler = () => {
-    const formData = new FormData()
-    formData.append('file', this.state.selectedFile, this.state.selectedFile.name)
-    console.log(formData)
-    axios.post('http://vps389544.ovh.net:5555', formData)
-    .then(function (response) {
-      this.setState({data: response.data});
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    console.log(this.state.selectedFile)
   }
 
   render() {
     return (
       <div className="flex-grid centered">
         <div className="col">
-        <input ref="file" type="file" multiple accept="image/*" onChange={this.fileChangedHandler} id="contained-button-file" />
-        <label htmlFor="contained-button-file">
-          <Button onClick={this.uploadHandler} variant="contained" component="span" className={this.props.classes.button} >
-            Upload a photo
-          </Button>
-        </label>
+        <form action="/url/to/your/function" method="post" enctype="multipart/form-data">
+          Select image to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload"/>
+          <Button type="submit" value="Upload Image" name="submit" className={this.props.classes.button}>Upload Image</Button>
+      </form>
+
         </div>
 
           <div className="col cardImage">
               <Card className={this.props.classes.card} >
               <CardContent>
-                <img src={this.state.img == null?placeholder:this.state.img}  className={this.props.classes.cardImg}/>
+                <img src={this.state.selectedFile == null?placeholder:this.state.selectedFile}  className={this.props.classes.cardImg}/>
               </CardContent>
               </Card>
 
             </div>
             <Buttons click={this.updateStage} text="Next"></Buttons>
           </div>
-
-
-
     );
   }
 }

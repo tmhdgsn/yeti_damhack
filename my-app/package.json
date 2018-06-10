@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.2.0",
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
     "link-react": "^3.0.0",
     "material-ui": "^0.20.1",
     "react": "^16.4.0",

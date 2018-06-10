@@ -40,8 +40,6 @@ class App extends Component {
         {this.state.stage === 0 &&
           <Buttons click={this.updateStage} text="Next"></Buttons>}
         {this.state.stage === 1 && < FileUpload />}
-        {this.state.stage === 1 &&
-          <Buttons click={this.updateStage} text="Next"></Buttons>}
         {this.state.stage > 0 && <BackButton click={this.prevStage} text="Back"></BackButton>}
 
       </div>
