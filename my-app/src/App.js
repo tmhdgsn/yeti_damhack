@@ -35,8 +35,9 @@ class App extends Component {
           <Brands />}
         {this.state.stage === 0 &&
           <Buttons click={this.updateStage} text="Next"></Buttons>}
-
         {this.state.stage === 1 && < FileUpload />}
+        {this.state.stage === 1 &&
+          <Buttons click={this.updateStage} text="Next"></Buttons>}
 
       </div>
     );

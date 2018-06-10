@@ -54,25 +54,26 @@ class FileUpload extends Component {
 
   render() {
     return (
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
+      <div className="flex-grid">
+        <div className="col">
               <input ref="file" type="file" multiple accept="image/*" onChange={this.fileChangedHandler} id="contained-button-file" />
               <label htmlFor="contained-button-file">
                 <Button onClick={this.uploadHandler} variant="contained" component="span" className={this.props.classes.button} >
                   Upload a photo
                 </Button>
               </label>
-          </Grid>
-          <Grid item xs={12}>
+        </div>
+
+          <div className="col">
             {this.state.selectedFile && <div>
               <Card className={this.props.classes.card} >
-              <CardContent>
+              <CardContent >
                 <img src={this.state.selectedFile}  className={this.props.classes.cardImg}/>
               </CardContent>
               </Card>
             </div>}
-          </Grid>
-        </Grid>
+            </div>
+          </div>
     );
   }
 }
