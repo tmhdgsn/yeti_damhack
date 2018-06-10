@@ -1,3 +1,6 @@
+html {
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   padding: 0;
@@ -5,10 +8,16 @@ body {
 
 }
 
+<<<<<<< HEAD
 input[type="file"]{
   display: none
 }
 
+=======
+h1 {
+  letter-spacing: 5px;
+}
+>>>>>>> 8de26ef4f70a912e7b3e98446d417362b9e99f1a
 .flex-grid {
   display: flex;
 }
@@ -24,13 +33,16 @@ cursor: pointer;
 }
 
 .img-border {
-outline: pink solid 4px;
+outline: #c51162 solid 4px;
 cursor: pointer;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   .flex-grid {
     display: block;
+  }
+  h1{
+    word-break: break-word;
   }
 }
 /*for gutters */

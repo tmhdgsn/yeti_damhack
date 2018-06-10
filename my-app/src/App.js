@@ -27,7 +27,7 @@ class App extends Component {
         <div className="App-header">
         <div className="flex-grid">
           <div className="col">
-          <h2>Welcome to WhatsTheNameEven</h2>
+          <h1>WELCOME TO WHATISTHENAMEEVEN</h1>
           </div>
           </div>
         </div>
