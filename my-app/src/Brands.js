@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './index.css';
 import hnm from '../images/hnmsmall.png'
-import zara from '../images/zarawhite.png'
+import asos from '../images/asos.jpg'
 import adidas from '../images/adidassmall.png'
 
 
@@ -61,7 +61,7 @@ class Brands extends Component {
 
                 <a onClick={this.onClickZara}>
                   <input type="hidden" name="brands" value="hnm" disabled=""/>
-                <img src={zara} alt={"zaralogo"} className={this.state.zaraSelected? 'img-border': ''}/>
+                <img src={asos} alt={"asoslogo"} className={this.state.zaraSelected? 'img-border': ''}/>
                 </a>
           </div>
 
