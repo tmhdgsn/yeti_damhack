@@ -5,6 +5,7 @@ import Buttons from './Buttons';
 import FileUpload from './FileUpload';
 import 'typeface-roboto';
 import BackButton from './BackButton';
+import Gallery from './Gallery';
 
 class App extends Component {
   constructor (props) {
@@ -31,7 +32,7 @@ class App extends Component {
         <div className="App-header">
         <div className="flex-grid">
           <div className="col">
-          <h1>WELCOME TO WHATISTHENAMEEVEN</h1>
+          <h1>WELCOME TO STYLEMATCH</h1>
           </div>
           </div>
         </div>
@@ -43,6 +44,8 @@ class App extends Component {
         {this.state.stage === 1 &&
           <Buttons click={this.updateStage} text="Next"></Buttons>}
         {this.state.stage > 0 && <BackButton click={this.prevStage} text="Back"></BackButton>}
+        {this.state.stage === 2 && < Gallery />}
+
 
       </div>
     );
