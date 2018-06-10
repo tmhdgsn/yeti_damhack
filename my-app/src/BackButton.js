@@ -20,7 +20,7 @@ function ContainedButtons(props) {
   return (
     <div idName='BackButton'>
 
-      <Button variant="contained"  className={classes.button} onClick={click}
+      <Button variant="contained"  color ="primary" className={classes.button} onClick={click}
       >
         {text}
       </Button>
