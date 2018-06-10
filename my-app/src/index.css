@@ -48,6 +48,11 @@ cursor: pointer;
   h1{
     word-break: break-word;
   }
+  #BackButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 /*for gutters */
 .flex-grid-thirds {
@@ -70,6 +75,14 @@ cursor: pointer;
 
 .Buttons{
   margin-top: 5em;
+}
+
+#BackButton
+{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
 }
 
 .cardImage {

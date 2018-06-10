@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './index.css';
-import zara from '../images/zara.jpg'
+import zara from '../images/zarawhite.png'
 import asos from '../images/asos.jpg'
 import adidas from '../images/adidassmall.png'
 
