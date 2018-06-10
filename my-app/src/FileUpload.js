@@ -4,10 +4,13 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import 'typeface-roboto';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
+  root: {
+   flexGrow: 1,
+  },
   button: {
     margin: theme.spacing.unit,
     width: 300,
@@ -17,10 +20,10 @@ const styles = theme => ({
     display: 'none',
   },
   card: {
-    maxWidth: 400,
+    maxWidth: 350,
   },
   cardImg: {
-    width: 360,
+    width: 300,
   },
 });
 
@@ -51,21 +54,25 @@ class FileUpload extends Component {
 
   render() {
     return (
-        <div className='Buttons'>
-        <input ref="file" type="file" multiple accept="image/*" onChange={this.fileChangedHandler} id="contained-button-file" />
-        <label htmlFor="contained-button-file">
-          <Button onClick={this.uploadHandler} variant="contained" component="span" className={this.props.classes.button} >
-            Upload a photo
-          </Button>
-        </label>
-        {this.state.selectedFile && <div>
-          <Card className={this.props.classes.card} >
-          <CardContent>
-            <img src={this.state.selectedFile}  className={this.props.classes.cardImg}/>
-          </CardContent>
-          </Card>
-        </div>}
-      </div>
+        <Grid container spacing={24}>
+          <Grid item xs={12}>
+              <input ref="file" type="file" multiple accept="image/*" onChange={this.fileChangedHandler} id="contained-button-file" />
+              <label htmlFor="contained-button-file">
+                <Button onClick={this.uploadHandler} variant="contained" component="span" className={this.props.classes.button} >
+                  Upload a photo
+                </Button>
+              </label>
+          </Grid>
+          <Grid item xs={12}>
+            {this.state.selectedFile && <div>
+              <Card className={this.props.classes.card} >
+              <CardContent>
+                <img src={this.state.selectedFile}  className={this.props.classes.cardImg}/>
+              </CardContent>
+              </Card>
+            </div>}
+          </Grid>
+        </Grid>
     );
   }
 }

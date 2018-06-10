@@ -8,16 +8,13 @@ body {
 
 }
 
-<<<<<<< HEAD
 input[type="file"]{
   display: none
 }
 
-=======
 h1 {
   letter-spacing: 5px;
 }
->>>>>>> 8de26ef4f70a912e7b3e98446d417362b9e99f1a
 .flex-grid {
   display: flex;
 }
