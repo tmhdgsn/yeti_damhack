@@ -4,6 +4,7 @@ import ConnectedBrands from './Brands';
 import Buttons from './Buttons';
 import FileUpload from './FileUpload';
 import 'typeface-roboto';
+import BackButton from './BackButton';
 
 class App extends Component {
   constructor (props) {
@@ -13,10 +14,15 @@ class App extends Component {
       files:null
     };
     this.updateStage = this.updateStage.bind(this);
+    this.prevStage = this.prevStage.bind(this);
   }
 
   updateStage() {
     this.setState({stage: this.state.stage + 1});
+  }
+
+  prevStage() {
+    this.setState({stage: this.state.stage -1});
   }
 
   render() {
@@ -33,8 +39,10 @@ class App extends Component {
           <ConnectedBrands />}
         {this.state.stage === 0 &&
           <Buttons click={this.updateStage} text="Next"></Buttons>}
-
         {this.state.stage === 1 && < FileUpload />}
+        {this.state.stage === 1 &&
+          <Buttons click={this.updateStage} text="Next"></Buttons>}
+        {this.state.stage > 0 && <BackButton click={this.prevStage} text="Back"></BackButton>}
 
       </div>
     );

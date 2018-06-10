@@ -5,6 +5,7 @@ import 'typeface-roboto';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
+import placeholder from '../images/imgplaceholder.jpg'
 
 const styles = theme => ({
   root: {
@@ -53,25 +54,25 @@ class FileUpload extends Component {
 
   render() {
     return (
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
+      <div className="flex-grid centered">
+        <div className="col">
               <input ref="file" type="file" multiple accept="image/*" onChange={this.fileChangedHandler} id="contained-button-file" />
               <label htmlFor="contained-button-file">
                 <Button onClick={this.uploadHandler} variant="contained" component="span" className={this.props.classes.button} >
                   Upload a photo
                 </Button>
               </label>
-          </Grid>
-          <Grid item xs={12}>
-            {this.state.selectedFile && <div>
+        </div>
+
+          <div className="col cardImage">
               <Card className={this.props.classes.card} >
               <CardContent>
-                <img src={this.state.selectedFile}  className={this.props.classes.cardImg}/>
+                <img src={this.state.selectedFile == null?placeholder:this.state.selectedFile}  className={this.props.classes.cardImg}/>
               </CardContent>
               </Card>
-            </div>}
-          </Grid>
-        </Grid>
+
+            </div>
+          </div>
     );
   }
 }

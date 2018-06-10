@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
-import hnm from '../images/hnmsmall.png'
 import zara from '../images/zarawhite.png'
+import asos from '../images/asos.jpg'
 import adidas from '../images/adidassmall.png'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -16,22 +16,20 @@ const Brands = ({ adidasSelected, asosSelected, zaraSelected, onClickAdidas, onC
                     <input type="hidden" name="brands" value="adidas" disabled=""/>
                     <img src={adidas} alt={"adidaslogo"} className={adidasSelected? 'img-border': ''}/>
                   </a>
-
               </div>
 
             <div className="col">
 
-                <a onClick={()=>onClickAsos(asosSelected)}>
-                  <input type="hidden" name="brands" value="asos" disabled=""/>
-                  <img src={hnm} alt={"asoslogo"} className={asosSelected? 'img-border': ''}/>
+                <a onClick={()=>onClickZara(zaraSelected)}>
+                  <input type="hidden" name="brands" value="hnm" disabled=""/>
+                  <img src={zara} alt={"zaralogo"} className={zaraSelected? 'img-border': ''}/>
                 </a>
-
             </div>
 
             <div className="col">
-                <a onClick={()=>onClickZara(zaraSelected)}>
+                <a onClick={()=>onClickAsos(asosSelected)}>
                   <input type="hidden" name="brands" value="hnm" disabled=""/>
-                <img src={zara} alt={"zaralogo"} className={zaraSelected? 'img-border': ''}/>
+                <img src={asos} alt={"asoslogo"} className={asosSelected? 'img-border': ''}/>
                 </a>
           </div>
 
